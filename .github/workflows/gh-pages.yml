@@ -9,6 +9,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - run: cd simple-chat
     - run: npm i
     - run: npm run build
     - name: Deploy
