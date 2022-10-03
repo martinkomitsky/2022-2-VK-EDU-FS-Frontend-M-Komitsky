@@ -1,5 +1,12 @@
-name: Deploy
-uses: peaceiris/actions-gh-pages@v3
-with:
-  github_token: ${{ secrets.GITHUB_TOKEN }}
-  publish_dir: ./build
+name: GitHub Pages
+run-name: ${{ github.actor }} is rolling out a new version of the app 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
